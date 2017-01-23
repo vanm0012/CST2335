@@ -1,10 +1,15 @@
 <resources>
+    <!-- activity_start-->
     <string name="app_name">AndroidLabs</string>
     <string name="hello_message">Hello World!</string>
     <string name="ButtonText">I\'m a button</string>
+
+    <!-- activity_login-->
     <string name="title_activity_login">LoginActivity</string>
     <string name="login_message">Login</string>
     <string name="login_name_message">Login Name</string>
     <string name="password_message">Password</string>
+
+    <!-- activity_list_items-->
     <string name="switch_message">Enable Something</string>
 </resources>
