@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Standard Strings -->
+    <string name="ok">OK</string>
+    <string name="cancel">No, Thank You</string>
+
     <!-- activity_start-->
     <string name="app_name">AndroidLabs</string>
     <string name="hello_message">Hello World, Eh!</string>
@@ -13,4 +17,6 @@
 
     <!-- activity_list_items-->
     <string name="switch_message">Enable Something, eh</string>
+    <string name="dialog_message">Are You Done?</string>
+    <string name="dialog_title"> </string>
 </resources>

@@ -1,6 +1,7 @@
 package cst2335.vanm0012.androidlabs;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 public class LoginActivity extends AppCompatActivity
 {
     protected static String ACTIVITY_NAME = "LoginActivity";
+    protected SharedPreferences sharedPref;
     protected  Button loginButton;
     protected EditText emailField;
 
@@ -26,20 +28,23 @@ public class LoginActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         loginButton = (Button) findViewById(R.id.login_button);
         emailField = (EditText) findViewById(R.id.email_field);
 
         loginButton.setOnClickListener(new View.OnClickListener()
         {
+            @Override
             public void onClick(View v)
             {
                 // Set email in SharedPreferences
-                SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putString("DefaultEmail", emailField.getText().toString());
                 editor.apply();
 
                 // Switch to StartActivity
+                Intent intent = new Intent(LoginActivity.this, StartActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -67,7 +72,6 @@ public class LoginActivity extends AppCompatActivity
         Log.i(ACTIVITY_NAME, "in onStart()");
 
         // Read from SharedPreferences for saved email and set field
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         emailField.setText(sharedPref.getString("DefaultEmail", "email@domain.com"));
     }
 
