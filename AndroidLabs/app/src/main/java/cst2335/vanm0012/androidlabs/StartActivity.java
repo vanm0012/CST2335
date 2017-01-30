@@ -14,6 +14,7 @@ public class StartActivity extends AppCompatActivity
 {
     protected static final String ACTIVITY_NAME = "StartActivity";
     protected Button button;
+    protected Button startChatButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,6 +23,7 @@ public class StartActivity extends AppCompatActivity
         setContentView(R.layout.activity_start);
 
         button = (Button) findViewById(R.id.button);
+        startChatButton = (Button) findViewById(R.id.startChatButton);
 
         button.setOnClickListener(new View.OnClickListener()
         {
@@ -31,6 +33,17 @@ public class StartActivity extends AppCompatActivity
                 // Switch to ListItemsActivity
                 Intent intent = new Intent(StartActivity.this, ListItemsActivity.class);
                 startActivityForResult(intent, 5);
+            }
+        });
+
+        startChatButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Log.i(ACTIVITY_NAME, "User clicked start chat button");
+                Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+                startActivity(intent);
             }
         });
     }
