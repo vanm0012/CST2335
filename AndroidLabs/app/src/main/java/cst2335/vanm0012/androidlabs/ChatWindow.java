@@ -1,6 +1,9 @@
 package cst2335.vanm0012.androidlabs;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +22,10 @@ import java.util.ArrayList;
 public class ChatWindow extends AppCompatActivity
 {
     protected static final String ACTIVITY_NAME = "ChatWindowActivity";
+
+    protected SQLiteDatabase db;
+    protected ChatDatabaseHelper dbHelper;
+
     protected ListView chatListView;
     protected EditText chatEditText;
     protected Button chatSendButton;
@@ -30,6 +37,10 @@ public class ChatWindow extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_window);
 
+        String[] allColumns = {ChatDatabaseHelper.KEY_ID, ChatDatabaseHelper.KEY_MESSAGE};
+        dbHelper = new ChatDatabaseHelper(getApplicationContext());
+        db = dbHelper.getWritableDatabase();
+
         chatListView = (ListView) findViewById(R.id.chatListView);
         chatEditText = (EditText) findViewById(R.id.chatEditText);
         chatSendButton = (Button) findViewById(R.id.chatSendButton);
@@ -38,15 +49,37 @@ public class ChatWindow extends AppCompatActivity
         final ChatAdapter messageAdapter = new ChatAdapter(this);
         chatListView.setAdapter(messageAdapter);
 
+        // Get any messages from the database
+        Cursor cursor = db.query(ChatDatabaseHelper.TABLE_MESSAGES,
+                allColumns, null, null, null, null, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast())
+        {
+            Log.i(ACTIVITY_NAME, "SQL MESSAGE: " + cursor.getString(cursor.getColumnIndex(
+                    ChatDatabaseHelper.KEY_MESSAGE)));
+            chatMessages.add(cursor.getString(cursor.getColumnIndex(
+                    ChatDatabaseHelper.KEY_MESSAGE)));
+            cursor.moveToNext();
+        }
+        cursor.close();
+
         chatSendButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                // If the chat text field has text, add it to the messages array
+                // If the chat text field has text, submit it
                 if (!chatEditText.getText().toString().trim().equals(""))
                 {
+                    // add text to messages array
                     chatMessages.add(chatEditText.getText().toString());
+
+                    // add text to database
+                    ContentValues insertValues = new ContentValues();
+                    insertValues.put(ChatDatabaseHelper.KEY_MESSAGE,
+                            chatEditText.getText().toString());
+                    db.insert(ChatDatabaseHelper.TABLE_MESSAGES, null, insertValues);
+
                     Log.i(ACTIVITY_NAME,
                             "Added string to chat messages " + chatEditText.getText().toString());
 
@@ -77,10 +110,10 @@ public class ChatWindow extends AppCompatActivity
         }
 
         @NonNull
-        public View getView(int position, View convertView, ViewGroup parent)
+        public View getView(int position, View convertView, @NonNull ViewGroup parent)
         {
             LayoutInflater inflater = ChatWindow.this.getLayoutInflater();
-            View result = null;
+            View result;
             if (position % 2 == 0)
             {
                 result = inflater.inflate(R.layout.chat_row_incoming, null);
