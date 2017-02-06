@@ -127,4 +127,12 @@ public class ChatWindow extends AppCompatActivity
             return result;
         }
     }
+
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+        db.close();
+        dbHelper.close();
+    }
 }
