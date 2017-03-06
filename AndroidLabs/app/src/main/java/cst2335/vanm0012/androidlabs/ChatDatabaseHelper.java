@@ -12,7 +12,7 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper
     protected static final String KEY_MESSAGE = "message";
 
     private static final String DATABASE_NAME = "Chats.db";
-    private static final int VERSION_NUM = 1;
+    private static final int VERSION_NUM = 2;
 
     private static final String DATABASE_CREATE = "create table "
             + TABLE_MESSAGES + "( " + KEY_ID
