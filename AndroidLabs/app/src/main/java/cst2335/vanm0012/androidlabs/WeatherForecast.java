@@ -62,9 +62,6 @@ public class WeatherForecast extends AppCompatActivity
             {
                 URL url = new URL(url_addr);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-
-                urlConnection.setRequestMethod("GET");
-                urlConnection.setDoInput(true);
                 urlConnection.connect();
 
                 inputStream = urlConnection.getInputStream();
