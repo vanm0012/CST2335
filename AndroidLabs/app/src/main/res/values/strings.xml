@@ -8,6 +8,7 @@
     <string name="hello_message">Hello World!</string>
     <string name="ButtonText">I\'m a button</string>
     <string name="startChatButton">Start Chat</string>
+    <string name="startWeatherButton">Check Weather</string>
 
     <!-- activity_login-->
     <string name="title_activity_login">LoginActivity</string>
@@ -23,4 +24,10 @@
     <!-- activity_chat_window -->
     <string name="chat_input_text">Enter Text</string>
     <string name="chat_send_button">Send</string>
+
+    <!-- activity_weather_forecast -->
+    <string name="weather_image_desc">Weather Icon</string>
+    <string name="hint_current_temp">Current Temperature</string>
+    <string name="hint_max_temp">Max Temperature</string>
+    <string name="hint_min_temp">Min Temperature</string>
 </resources>

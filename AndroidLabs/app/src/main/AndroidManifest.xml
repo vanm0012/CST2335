@@ -6,13 +6,16 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartActivity"></activity>
+        <activity android:name=".StartActivity" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -22,8 +25,9 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListItemsActivity"></activity>
-        <activity android:name=".ChatWindow"></activity>
+        <activity android:name=".ListItemsActivity" />
+        <activity android:name=".ChatWindow" />
+        <activity android:name=".WeatherForecast" />
     </application>
 
 </manifest>

@@ -37,4 +37,13 @@
         android:id="@+id/startChatButton"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/startWeatherButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:id="@+id/startWeatherButton"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
