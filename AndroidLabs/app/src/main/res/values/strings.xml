@@ -30,4 +30,9 @@
     <string name="hint_current_temp">Current Temperature</string>
     <string name="hint_max_temp">Max Temperature</string>
     <string name="hint_min_temp">Min Temperature</string>
+
+    <!-- fragment_message_layout -->
+    <string name="message_detail_msg">Message:</string>
+    <string name="message_detail_id">ID:</string>
+    <string name="message_detail_btn">DELETE THIS MESSAGE</string>
 </resources>
