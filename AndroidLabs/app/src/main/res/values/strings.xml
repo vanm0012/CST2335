@@ -35,4 +35,7 @@
     <string name="message_detail_msg">Message:</string>
     <string name="message_detail_id">ID:</string>
     <string name="message_detail_btn">DELETE THIS MESSAGE</string>
+
+    <!-- activity_test_toolbar -->
+    <string name="title_activity_test_toolbar">TestToolbar</string>
 </resources>
