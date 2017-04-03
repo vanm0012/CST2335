@@ -9,6 +9,7 @@
     <string name="ButtonText">I\'m a button</string>
     <string name="startChatButton">Start Chat</string>
     <string name="startWeatherButton">Check Weather</string>
+    <string name="startTestToolbarButton">Test Toolbar</string>
 
     <!-- activity_login-->
     <string name="title_activity_login">LoginActivity</string>
@@ -38,4 +39,7 @@
 
     <!-- activity_test_toolbar -->
     <string name="title_activity_test_toolbar">TestToolbar</string>
+    <string name="test_toolbar_menu_title_one">Add</string>
+    <string name="test_toolbar_menu_title_two">Delete</string>
+    <string name="test_toolbar_menu_title_three">Edit</string>
 </resources>
