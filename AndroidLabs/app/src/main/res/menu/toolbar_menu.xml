@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-qq
     <item
         android:id="@+id/action_one"
         android:title="@string/test_toolbar_menu_title_one"
@@ -13,14 +12,19 @@ qq
         android:id="@+id/action_two"
         android:title="@string/test_toolbar_menu_title_two"
         android:icon="@android:drawable/ic_menu_delete"
-        android:orderInCategory="101"
+        android:orderInCategory="201"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_three"
         android:title="@string/test_toolbar_menu_title_three"
         android:icon="@android:drawable/ic_menu_edit"
-        android:orderInCategory="101"
+        android:orderInCategory="301"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/test_toolbar_menu_title_about"
+        app:showAsAction="never" />
 
 </menu>

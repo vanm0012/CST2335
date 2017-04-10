@@ -2,6 +2,7 @@
     <!-- Standard Strings -->
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="toolbar_about_string">Version 1.0, by Tryton Van Meer</string>
 
     <!-- activity_start-->
     <string name="app_name">AndroidLabs</string>
@@ -42,4 +43,8 @@
     <string name="test_toolbar_menu_title_one">Add</string>
     <string name="test_toolbar_menu_title_two">Delete</string>
     <string name="test_toolbar_menu_title_three">Edit</string>
+    <string name="test_toolbar_menu_title_about">About</string>
+    <string name="test_toolbar_action_two_dialog_title">Do you want to go back?</string>
+    <string name="test_toolbar_action_three_dialog_edittext">New Message</string>
+    <string name="test_toolbar_action_three_dialog_edittext_label">Enter A New Message</string>
 </resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_dialog_info"
+        android:tint="@color/colorAccent"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/test_toolbar_action_three_dialog_edittext_label"
+        android:labelFor="@+id/test_toolbar_action_three_new_msg" />
+    <EditText
+        android:id="@+id/test_toolbar_action_three_new_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/test_toolbar_action_three_dialog_edittext"
+        android:inputType="text" />
+
+</LinearLayout>
